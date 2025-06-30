@@ -23,7 +23,8 @@ class PostController extends Controller
 
         $posts = Post::with('reactions')->limit($this->limit)->get();
 
-        return new PostCollection($posts);
+        return view('posts.index', compact('posts'));
+
     }
 
     public function by_user($user_id)
